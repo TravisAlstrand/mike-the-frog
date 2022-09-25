@@ -3,6 +3,7 @@ const form = document.querySelector('form');
 const input = document.querySelector('.text-input');
 const mikesTextDisplay = document.querySelector('.response-text');
 const userTextDisplay = document.querySelector('.user-text');
+let mikesResponse;
 
 // function to get a random phrase from Mike's array
 function getRandomPhrase() {
@@ -13,11 +14,28 @@ function getRandomPhrase() {
   return phrases[randomNumber].toUpperCase();
 };
 
+let index = 0;
+const speed = 50; /* The speed/duration of the effect in milliseconds */
+
+// function to show mikes response show up like he's typing
+function typeWriter(string) {
+  if (index < string.length) {
+    mikesTextDisplay.innerHTML += string.charAt(index);
+    index++;
+    setTimeout(function(){ typeWriter(string); }, speed);
+  } else {
+    index = 0;
+  }
+}
+
 // event listener for form submission
 form.addEventListener('submit', (e) => {
 
   // prevent page from reloading
   e.preventDefault();
+
+  // reset mikes text
+  mikesTextDisplay.innerHTML = "";
 
   // variable to store user's text at time of submission
   const submittedText = input.value.toUpperCase();
@@ -26,18 +44,18 @@ form.addEventListener('submit', (e) => {
   userTextDisplay.innerHTML = submittedText;
 
   // if user's text includes 'hello' or 'hi'...
-  if (submittedText.includes('HELLO') || submittedText.includes(' HI ')) {
+  if (submittedText.includes('HELLO') || submittedText.includes('HI ')) {
 
-    mikesTextDisplay.innerHTML = 'HELLO THERE, HOW CAN I HELP?'; 
+    mikesResponse = 'HELLO THERE, HOW CAN I HELP?'; 
 
     // if user's text includes 'you' or related words...
   } else if (submittedText.includes('YOU') || submittedText.includes("YOU'RE") || submittedText.includes("YOU'VE")) {
 
-    mikesTextDisplay.innerHTML = "WHO, ME? I'M JUST A FROG SILLY!";
+    mikesResponse = "WHO, ME? I'M JUST A FROG SILLY!";
 
   } else if (submittedText === "") {
 
-    mikesTextDisplay.innerHTML = "AHH... THE SILENT TREATMENT, EH?"
+    mikesResponse = "AHH... THE SILENT TREATMENT, EH?"
 
   } else {
 
@@ -45,8 +63,11 @@ form.addEventListener('submit', (e) => {
     const randomPhrase = getRandomPhrase();
 
     // append random phrase to the page
-    mikesTextDisplay.innerHTML = randomPhrase;
+    mikesResponse = randomPhrase;
   }
+
+  // send response to typewriter function
+  typeWriter(mikesResponse);
 
   // reset text input
   input.value = "";

@@ -17,7 +17,7 @@
 
 .main-container {
   width: 75%;
-  height: 70vh;
+  height: 80vh;
   max-width: 500px;
   flex-direction: column;
   margin: 2rem auto;
@@ -27,18 +27,13 @@
 }
 
 .mike-img {
-  max-width: 150px;
-  margin: 1rem auto;
-}
-
-.name,
-button,
-input {
-  font-size: 1.25rem;
+  max-width: 20%;
+  margin: .5rem auto;
 }
 
 .name {
   font-weight: bold;
+  margin: .5rem 0;
 }
 
 .mike {
@@ -52,7 +47,7 @@ input {
 .chat-container {
   width: 90%;
   height: 50%;
-  margin: 1rem auto;
+  margin: .5rem auto;
 }
 
 .response-text,
@@ -61,6 +56,7 @@ input {
   overflow-y: auto;
   word-wrap: break-word;
   border: 1px solid black;
+  border-radius: 5px; 
   background-color: white;
 }
 
@@ -70,7 +66,7 @@ input {
 
 .user-text {
   min-height: 2.5rem;
-  max-height: 210px;
+  max-height: 115px;
 }
 
 form.flex {
@@ -80,10 +76,9 @@ form.flex {
 }
 
 .text-input {
-  width: 75%;
-  height: 2rem;
+  width: 90%;
+  height: 2.5rem;
   margin-bottom: 1rem;
-  font-size: 1.25rem;
   padding: .5rem;
   border-radius: 5px;
   transition: background-color .4s ease;
@@ -97,7 +92,7 @@ button {
   cursor: pointer;
   width: 75%;
   height: 2rem;
-  font-size: 1.25rem;
+  margin-bottom: .5rem;
   border-radius: 5px;
   background-color: var(--clr-main-lt);
   transition: background-color .4s ease;
@@ -105,4 +100,11 @@ button {
 
 button:hover {
   background-color: var(--clr-main-drk);
+}
+
+@media (min-width: 450px) {
+  button,
+  .text-input {
+    font-size: 1.25rem;
+  }
 }
