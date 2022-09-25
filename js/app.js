@@ -28,6 +28,9 @@ function typeWriter(string) {
   }
 }
 
+// set mikes initial message on page load
+typeWriter("HELLO! WHAT SEEMS TO BE THE PROBLEM?");
+
 // event listener for form submission
 form.addEventListener('submit', (e) => {
 
