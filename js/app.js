@@ -47,4 +47,7 @@ form.addEventListener('submit', (e) => {
     // append random phrase to the page
     mikesTextDisplay.innerHTML = randomPhrase;
   }
+
+  // reset text input
+  input.value = "";
 });
