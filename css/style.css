@@ -64,10 +64,6 @@ body {
   background-color: white;
 }
 
-.response-text {
-  height: 2.5rem;
-}
-
 .user-text {
   min-height: 2.5rem;
   max-height: 115px;
