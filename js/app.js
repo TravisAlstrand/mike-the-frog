@@ -2,6 +2,7 @@ import { phrases } from './phrases.js';
 import { handle_mike_mouth_change, handle_mike_idle } from './animation.js';
 const form = document.querySelector('form');
 const input = document.querySelector('.text-input');
+const submitButton = document.querySelector('button[type="submit"]');
 const mikesTextDisplay = document.querySelector('.response-text');
 const userTextDisplay = document.querySelector('.user-text');
 let mikesResponse;
@@ -20,6 +21,7 @@ const speed = 50; /* The speed/duration of the effect in milliseconds */
 
 // function to show mikes response show up like he's typing
 function typeWriter(string) {
+  submitButton.disabled = true;
   if (index < string.length) {
     mikesTextDisplay.innerHTML += string.charAt(index);
     index++;
@@ -32,6 +34,7 @@ function typeWriter(string) {
 
   } else {
     index = 0;
+    submitButton.disabled = false;
   }
 
 }
