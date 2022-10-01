@@ -1,5 +1,5 @@
 import { phrases } from './phrases.js';
-import { handle_mike_mouth_change, handle_mike_blink } from './animation.js';
+import { handle_mike_mouth_change, handle_mike_idle } from './animation.js';
 const form = document.querySelector('form');
 const input = document.querySelector('.text-input');
 const mikesTextDisplay = document.querySelector('.response-text');
@@ -42,7 +42,7 @@ typeWriter("HELLO! WHAT SEEMS TO BE THE PROBLEM?");
 
 
 setInterval(function(){
-  handle_mike_blink(document.querySelector("#mike-img"));
+  handle_mike_idle(document.querySelector("#mike-img"));
 }, 100);
 
 
