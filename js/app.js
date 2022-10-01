@@ -1,5 +1,5 @@
 import { phrases } from './phrases.js';
-import { handle_mike_mouth_change } from './animation.js';
+import { handle_mike_mouth_change, handle_mike_blink } from './animation.js';
 const form = document.querySelector('form');
 const input = document.querySelector('.text-input');
 const mikesTextDisplay = document.querySelector('.response-text');
@@ -36,8 +36,15 @@ function typeWriter(string) {
 
 }
 
+
 // set mikes initial message on page load
 typeWriter("HELLO! WHAT SEEMS TO BE THE PROBLEM?");
+
+
+setInterval(function(){
+  handle_mike_blink(document.querySelector("#mike-img"));
+}, 100);
+
 
 // event listener for form submission
 form.addEventListener('submit', (e) => {
