@@ -10,6 +10,7 @@ Please ensure that Travis or Rachel knows that you're contributing before you co
 
 - [@TravisAlstrand](https://github.com/TravisAlstrand)
 - [@rachelktyjohnson](https://www.github.com/rachelktyjohnson)
+- [@rohald89](https://github.com/rohald89)
 
 
 ## More projects please!
