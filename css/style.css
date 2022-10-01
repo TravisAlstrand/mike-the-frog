@@ -31,7 +31,7 @@ body {
 }
 
 .mike-img {
-  max-width: 20%;
+  max-width: 250px;
   margin: .5rem auto;
 }
 
@@ -60,7 +60,7 @@ body {
   overflow-y: auto;
   word-wrap: break-word;
   border: 1px solid black;
-  border-radius: 5px; 
+  border-radius: 5px;
   background-color: white;
 }
 

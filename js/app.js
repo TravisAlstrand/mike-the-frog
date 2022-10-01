@@ -1,4 +1,5 @@
 import { phrases } from './phrases.js';
+import { handle_mike_mouth_change } from './animation.js';
 const form = document.querySelector('form');
 const input = document.querySelector('.text-input');
 const mikesTextDisplay = document.querySelector('.response-text');
@@ -22,10 +23,17 @@ function typeWriter(string) {
   if (index < string.length) {
     mikesTextDisplay.innerHTML += string.charAt(index);
     index++;
-    setTimeout(function(){ typeWriter(string); }, speed);
+    setTimeout(function(){
+      typeWriter(string);
+      }, speed);
+    setTimeout(function(){
+      handle_mike_mouth_change(document.querySelector("#mike-img"));
+      }, 100);
+
   } else {
     index = 0;
   }
+
 }
 
 // set mikes initial message on page load
@@ -49,7 +57,7 @@ form.addEventListener('submit', (e) => {
   // if user's text includes 'hello' or 'hi'...
   if (submittedText.includes('HELLO') || submittedText.includes('HI ')) {
 
-    mikesResponse = 'HELLO THERE, HOW CAN I HELP?'; 
+    mikesResponse = 'HELLO THERE, HOW CAN I HELP?';
 
     // if user's text includes 'you' or related words...
   } else if (submittedText.includes('YOU') || submittedText.includes("YOU'RE") || submittedText.includes("YOU'VE")) {
