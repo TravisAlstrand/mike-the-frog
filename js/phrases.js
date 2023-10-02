@@ -45,3 +45,17 @@ export const silent_phrases = [
     "I'm patiently waiting for your input.",
     "It's all quiet on the digital front. What's on your mind?"
 ]
+
+export const you_phrases = [
+    "Who, me? I'm just a frog silly!",
+    "Ah, you've noticed! What can I assist you with today?",
+    "You're right, I'm here to help. How can I assist you?",
+    "You're quite observant! How can I be of service?",
+    "Yes, you're chatting with me! What's on your mind?",
+    "It's all about you! How can I assist you further?",
+    "You're the star of this conversation. What can I do for you?",
+    "You've got my attention! How can I assist you today?",
+    "You're absolutely correct! How may I assist you?",
+    "Indeed, you're chatting with me. How can I help?",
+    "You've found your way here! What can I do for you?"
+]

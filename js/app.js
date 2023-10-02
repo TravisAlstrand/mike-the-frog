@@ -1,4 +1,4 @@
-import { phrases, silent_phrases } from './phrases.js';
+import { phrases, silent_phrases, you_phrases } from './phrases.js';
 import { handle_mike_mouth_change, handle_mike_idle } from './animation.js';
 const form = document.querySelector('form');
 const input = document.querySelector('.text-input');
@@ -72,7 +72,7 @@ form.addEventListener('submit', (e) => {
     // if user's text includes 'you' or related words...
   } else if (submittedText.includes('YOU') || submittedText.includes("YOU'RE") || submittedText.includes("YOU'VE")) {
 
-    mikesResponse = "WHO, ME? I'M JUST A FROG SILLY!";
+    mikesResponse = getRandomPhrase(you_phrases);
 
   } else if (submittedText === "") {
 
