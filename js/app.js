@@ -1,4 +1,4 @@
-import { phrases } from './phrases.js';
+import { phrases, silent_phrases } from './phrases.js';
 import { handle_mike_mouth_change, handle_mike_idle } from './animation.js';
 const form = document.querySelector('form');
 const input = document.querySelector('.text-input');
@@ -8,12 +8,12 @@ const userTextDisplay = document.querySelector('.user-text');
 let mikesResponse;
 
 // function to get a random phrase from Mike's array
-function getRandomPhrase() {
+function getRandomPhrase(phrase_list) {
   // get a random number between 0 & the last number of the phrases array
-  const randomNumber = Math.floor(Math.random() * phrases.length);
+  const randomNumber = Math.floor(Math.random() * phrase_list.length);
 
   // return the phrase in the array at the randomNumber's position
-  return phrases[randomNumber].toUpperCase();
+  return phrase_list[randomNumber].toUpperCase();
 };
 
 let index = 0;
@@ -76,15 +76,12 @@ form.addEventListener('submit', (e) => {
 
   } else if (submittedText === "") {
 
-    mikesResponse = "AHH... THE SILENT TREATMENT, EH?"
+    mikesResponse = getRandomPhrase(silent_phrases);
 
   } else {
 
-    // get a random response from Mike's array
-    const randomPhrase = getRandomPhrase();
-
     // append random phrase to the page
-    mikesResponse = randomPhrase;
+    mikesResponse = getRandomPhrase(phrases);
   }
 
   // send response to typewriter function

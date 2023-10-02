@@ -27,3 +27,21 @@ export const phrases = [
     "Are you ready to embark on a code crusade?",
     "Sometimes, code speaks in riddles. What's its message?"
 ];
+
+export const silent_phrases = [
+    "Silence speaks volumes, doesn't it?",
+    "Cat got your keyboard?",
+    "I'm here whenever you're ready to chat.",
+    "Don't be shy, feel free to ask anything.",
+    "Is there something on your mind, or did you just enjoy the silence?",
+    "No worries, take your time.",
+    "Feel free to type whenever you're ready.",
+    "I'll be right here when you have a question or need assistance.",
+    "Just hanging out in the digital void. Let me know if you need anything.",
+    "The silence is deafening. How can I assist you today?",
+    "Need a moment to gather your thoughts?",
+    "Did I stump you with my previous response?",
+    "Hello? Is it code you're looking for?",
+    "I'm patiently waiting for your input.",
+    "It's all quiet on the digital front. What's on your mind?"
+]
